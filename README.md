@@ -55,7 +55,7 @@ will go to your output directory with a name like `YourTestProject-Signed.apk`.
 
 ## Bonus: IDE (especially JetBrains Rider) support
 
-This will enable building Xamarin.Android projects directly from `xbuild`.
+This will enable building Xamarin.Android projects directly from `msbuild`.
 
 **DISCLAIMER: This is not officially supported. AFAIK Rider only supports Xamarin on Windows/macOS, as
 Xamarin does not officially support or provide packages for Linux.**
@@ -68,4 +68,10 @@ First, change to your unpacked build of Xamarin.Android:
 cd /path/to/oss-xamarin.android*/
 ```
 
-Now, you will need to copy build configuration and tools to `/usr/lib/mono/xbuild`.
+Now, you will need to copy build configuration and tools to `/usr/lib/mono`.
+
+```sh
+sudo cp -r bin/Debug/lib/* /usr/lib/mono
+```
+
+This will put the MSBuild targets where `msbuild` expects them.
