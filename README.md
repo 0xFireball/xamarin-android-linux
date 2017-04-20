@@ -74,4 +74,31 @@ Now, you will need to copy build configuration and tools to `/usr/lib/mono`.
 sudo cp -r bin/Debug/lib/* /usr/lib/mono
 ```
 
+Let's also copy the `Xamarin.Android` tools in `bin`:
+
+```sh
+sudo mkdir -p /usr/lib/mono/xamarin-android/bin/
+sudo cp -r bin/Debug/bin/* /usr/lib/mono/xamarin-android/bin/
+```
+
 This will put the MSBuild targets where `msbuild` expects them.
+
+At this point, if you try to build, `msbuild` will complain about being unable to locate `mandroid`.
+
+Now, you will have to add additional props to your `.csproj` file to help `msbuild` find
+the tools it needs.
+
+Add a conditional `PropertyGroup` for Linux like this:
+
+```xml
+<PropertyGroup Condition=" '$(OS)' == 'Unix' ">
+    <MonoAndroidToolsDirectory>/usr/lib/mono/mandroid</MonoAndroidToolsDirectory>
+    <MonoAndroidBinDirectory>/usr/lib/mono/xamarin-android/bin</MonoAndroidBinDirectory>
+    <AndroidSdkDirectory>$(ANDROID_SDK_PATH)</AndroidSdkDirectory>
+    <AndroidNdkDirectory>$(ANDROID_NDK_PATH)</AndroidNdkDirectory>
+</PropertyGroup>
+```
+
+This will tell `msbuild` where to find build tools and scripts for **Xamarin.Android**!
+Make sure your `ANDROID_SDK_PATH` and `ANDROID_NDK_PATH` environment variables are set,
+or change the paths accordingly.
