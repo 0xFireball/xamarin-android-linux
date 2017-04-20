@@ -102,3 +102,11 @@ Add a conditional `PropertyGroup` for Linux like this:
 This will tell `msbuild` where to find build tools and scripts for **Xamarin.Android**!
 Make sure your `ANDROID_SDK_PATH` and `ANDROID_NDK_PATH` environment variables are set,
 or change the paths accordingly.
+
+**You should now be able to build your Xamarin.Android project from the command line!**
+
+Finally, there's one last trick Rider has: it will provide its own Android SDK path
+by default. To fix that, go into Rider's settings and change the path to the Android SDK
+in its options.
+
+You should now be able to open and successfully build **Xamarin.Android** projects in Rider! We did it! :)
