@@ -34,4 +34,18 @@ export ANDROID_NDK_PATH=$HOME/Android/Sdk/ndk-bundle
 
 ## Test build
 
-Build a test project (there's one in the source repository) for Xamarin.Android
+Build a test project (there's one in the source repository) for Xamarin.Android.
+
+```sh
+xbuild /path/to/YourTestProject.csproj
+```
+
+The build should complete successfully. Next, try building a signed package:
+
+```sh
+xbuild /path/to/YourTestProject.csproj /t:SignAndroidPackage
+```
+
+This will invoke `keytool` and generate a keystore and use it to sign an `.apk` file, which
+will go to your output directory with a name like `YourTestProject-Signed.apk`.
+
