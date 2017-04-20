@@ -9,6 +9,10 @@ since they open sourced Xamarin, recently they have added support for building o
 
 ## Let's start
 
+## Prerequisites
+
+- Latest `mono` packages for your platform
+
 ## Obtain `Xamarin.Android` binaries
 
 ### Prebuilt Releases (Recommended)
@@ -37,15 +41,31 @@ export ANDROID_NDK_PATH=$HOME/Android/Sdk/ndk-bundle
 Build a test project (there's one in the source repository) for Xamarin.Android.
 
 ```sh
-xbuild /path/to/YourTestProject.csproj
+/path/to/oss-xamarin.android*/bin/Debug/bin/xabuild /path/to/YourTestProject.csproj
 ```
 
 The build should complete successfully. Next, try building a signed package:
 
 ```sh
-xbuild /path/to/YourTestProject.csproj /t:SignAndroidPackage
+/path/to/oss-xamarin.android*/bin/Debug/bin/xabuild /path/to/YourTestProject.csproj /t:SignAndroidPackage
 ```
 
 This will invoke `keytool` and generate a keystore and use it to sign an `.apk` file, which
 will go to your output directory with a name like `YourTestProject-Signed.apk`.
 
+## Bonus: IDE (especially JetBrains Rider) support
+
+This will enable building Xamarin.Android projects directly from `xbuild`.
+
+**DISCLAIMER: This is not officially supported. AFAIK Rider only supports Xamarin on Windows/macOS, as
+Xamarin does not officially support or provide packages for Linux.**
+
+**WARNING: These steps require root access and modifying your Mono installation.**
+
+First, change to your unpacked build of Xamarin.Android:
+
+```sh
+cd /path/to/oss-xamarin.android*/
+```
+
+Now, you will need to copy build configuration and tools to `/usr/lib/mono/xbuild`.
