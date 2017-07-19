@@ -1,6 +1,11 @@
-# xamarin-android-linux
+# Setting up Xamarin.Android on Linux
 
-A complete guide to getting **Xamarin.Android** ready to use on Linux!
+A guide to getting **Xamarin.Android** ready to use on your distro of choice!
+The guide was originally based on a system running Ubuntu, but it should be
+very straightforward to get it to work on other distros as well.
+
+Note that this is officially unsupported, but it can be used as a loose
+guide to help in setting this up on your system.
 
 ## Why?
 
