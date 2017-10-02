@@ -1,3 +1,4 @@
+
 # Setting up Xamarin.Android on Linux
 
 A guide to getting **Xamarin.Android** ready to use on your distro of choice!
@@ -6,6 +7,8 @@ very straightforward to get it to work on other distros as well.
 
 Note that this is officially unsupported, but it can be used as a loose
 guide to help in setting this up on your system.
+
+[![works badge](https://cdn.rawgit.com/nikku/works-on-my-machine/v0.2.0/badge.svg)](https://github.com/nikku/works-on-my-machine)
 
 ## Why?
 
