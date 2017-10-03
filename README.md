@@ -118,3 +118,5 @@ by default. To fix that, go into Rider's settings and change the path to the And
 in its options.
 
 You should now be able to open and successfully build **Xamarin.Android** projects in Rider! We did it! :)
+
+P.S. Here you may find the unofficial [command line tools and instruction](https://github.com/igorkovalchuk/xamarin-forms-android-linux-tools) for work in the Visual Studio Code and MonoDevelop.
