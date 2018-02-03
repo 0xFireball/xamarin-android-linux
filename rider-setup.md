@@ -16,8 +16,10 @@ cd /path/to/xamarin.android-oss*/
 Now, you will need to copy build configuration and tools to `/usr/lib/mono`.
 
 ```sh
-sudo cp -r bin/Debug/lib/* /usr/lib/mono
+sudo cp -r bin/Debug/lib/xamarin.android/* /usr/lib/mono
 ```
+
+This command will add the `MonoAndroid` target framework files to `/usr/lib/mono/xbuild-frameworks`, where they will be recognized as target frameworks by `xbuild`.
 
 Let's also copy the `Xamarin.Android` tools in `bin`:
 
@@ -45,8 +47,8 @@ Add a conditional `PropertyGroup` for Linux like this:
 ```
 
 This will tell `msbuild` where to find build tools and scripts for **Xamarin.Android**!
-Make sure your `ANDROID_SDK_PATH` and `ANDROID_NDK_PATH` environment variables are set,
-or change the paths accordingly.
+
+Make sure your `ANDROID_SDK_PATH` and `ANDROID_NDK_PATH` environment variables are set, or change the paths accordingly.
 
 **You should now be able to build your Xamarin.Android project from the command line!**
 
