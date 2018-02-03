@@ -43,10 +43,14 @@ Add a conditional `PropertyGroup` for Linux like this:
     <MonoAndroidBinDirectory>/usr/lib/mono/xamarin-android/bin</MonoAndroidBinDirectory>
     <AndroidSdkDirectory>$(ANDROID_SDK_PATH)</AndroidSdkDirectory>
     <AndroidNdkDirectory>$(ANDROID_NDK_PATH)</AndroidNdkDirectory>
+
+    <TargetFrameworkRootPath>/usr/lib/mono/xbuild-frameworks/</TargetFrameworkRootPath>
 </PropertyGroup>
 ```
 
-This will tell `msbuild` where to find build tools and scripts for **Xamarin.Android**!
+This will tell `msbuild` where to find build tools and scripts for **Xamarin.Android**.
+
+The last line tells `msbuild` to use the `xbuild-frameworks` as the root path for target frameworks, which is where we copied the `MonoAndroid` reference assemblies.
 
 Make sure your `ANDROID_SDK_PATH` and `ANDROID_NDK_PATH` environment variables are set, or change the paths accordingly.
 
