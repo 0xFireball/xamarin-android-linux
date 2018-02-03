@@ -13,8 +13,8 @@ guide to help in setting this up on your system.
 
 ## Why?
 
-Xamarin has stated that there are no plans to officially support Linux. However,
-since they open sourced Xamarin, recently they have added support for building on Linux!
+Xamarin has stated that there are no plans to officially support Linux.
+However, since Xamarin was open sourced, the developers have made it possible to manually install Xamarin.Android, and with some tweaking we can get full debugging support in Rider!
 
 ## Let's start
 
