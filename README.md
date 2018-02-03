@@ -50,7 +50,7 @@ export ANDROID_NDK_PATH=$HOME/Android/Sdk/ndk-bundle
 Build a test project (there's one in the source repository) for Xamarin.Android.
 
 ```sh
-/path/to/oss-xamarin.android*/bin/Debug/bin/xabuild /path/to/samples/HelloWorld/HelloWorld.csproj
+/path/to/xamarin.android-oss*/bin/Debug/bin/xabuild /path/to/samples/HelloWorld/HelloWorld.csproj
 ```
 
 The build should complete successfully.
@@ -64,7 +64,7 @@ sudo ln -s /usr/lib/libzip.so /usr/lib/libzip.so.4
 Next, try building a signed package:
 
 ```sh
-/path/to/oss-xamarin.android*/bin/Debug/bin/xabuild /path/to/samples/HelloWorld/HelloWorld.csproj /t:SignAndroidPackage
+/path/to/xamarin.android-oss*/bin/Debug/bin/xabuild /path/to/samples/HelloWorld/HelloWorld.csproj /t:SignAndroidPackage
 ```
 
 This will invoke `keytool` and generate a keystore and use it to sign an `.apk` file, which
