@@ -5,6 +5,10 @@ This guide has been tested successfully:
 - Arch Linux as of Feb 3, 2018
 - Rider 2017.3
 
+Current Status (Tested):
+- Fully functional project build/run
+- Remote debugging and breakpoints in Rider
+
 This will enable building Xamarin.Android projects directly from `msbuild`.
 
 **DISCLAIMER: This is not officially supported. Rider only supports Xamarin on Windows/macOS, as Xamarin does not officially support or provide packages for Linux.**
