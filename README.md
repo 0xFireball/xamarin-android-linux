@@ -27,7 +27,7 @@ since they open sourced Xamarin, recently they have added support for building o
 
 The latest successful artifacts from automated builds for Linux are available here: <https://jenkins.mono-project.com/view/Xamarin.Android/job/xamarin-android-linux/lastSuccessfulBuild/Azure/>
 
-Download the `oss-xamarin.android*` package to your system and extract it.
+Download the `xamarin.android-oss_*.orig.tar.bz2` package to your system and extract it.
 
 ### From source
 
@@ -49,13 +49,21 @@ export ANDROID_NDK_PATH=$HOME/Android/Sdk/ndk-bundle
 Build a test project (there's one in the source repository) for Xamarin.Android.
 
 ```sh
-/path/to/oss-xamarin.android*/bin/Debug/bin/xabuild /path/to/YourTestProject.csproj
+/path/to/oss-xamarin.android*/bin/Debug/bin/xabuild /path/to/samples/HelloWorld/HelloWorld.csproj
 ```
 
-The build should complete successfully. Next, try building a signed package:
+The build should complete successfully.
+If you have problems, try adding `/verbosity:d` to get detailed output from the build process.
+You may have a minor error about `libzip.so.4` not being found, just create a symlink to your libzip:
 
 ```sh
-/path/to/oss-xamarin.android*/bin/Debug/bin/xabuild /path/to/YourTestProject.csproj /t:SignAndroidPackage
+sudo ln -s /usr/lib/libzip.so /usr/lib/libzip.so.4
+```
+
+Next, try building a signed package:
+
+```sh
+/path/to/oss-xamarin.android*/bin/Debug/bin/xabuild /path/to/samples/HelloWorld/HelloWorld.csproj /t:SignAndroidPackage
 ```
 
 This will invoke `keytool` and generate a keystore and use it to sign an `.apk` file, which
