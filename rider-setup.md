@@ -70,4 +70,4 @@ in its options.
 
 You should now be able to open and successfully build **Xamarin.Android** projects in Rider! We did it! :)
 
-I have successfully the remote debugger, and it worked as far as I tested it!
+I have successfully used the remote debugger, and it worked as far as I tested it!
