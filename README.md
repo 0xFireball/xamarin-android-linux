@@ -5,6 +5,7 @@ A guide to getting **Xamarin.Android** ready to use on your distro of choice!
 
 This guide has been tested successfully:
 - Arch Linux as of Feb 3, 2018
+- Ubuntu 16.04 (`mono-5.8`) as of Feb 23, 2018
 
 Note that this is officially unsupported, but it can be used as a loose
 guide to help in setting this up on your system.
@@ -20,7 +21,7 @@ However, since Xamarin was open sourced, the developers have made it possible to
 
 ## Prerequisites
 
-- Latest `mono` packages for your platform
+- Latest `mono` packages for your platform 
 
 ## Obtain `Xamarin.Android` binaries
 
