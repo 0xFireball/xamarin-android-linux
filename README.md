@@ -21,7 +21,7 @@ However, since Xamarin was open sourced, the developers have made it possible to
 
 ## Prerequisites
 
-- Latest `mono` packages for your platform 
+- Latest `mono` packages for your platform
 
 ## Obtain `Xamarin.Android` binaries
 
